@@ -1,5 +1,7 @@
 package Variables;
 
+import javax.management.RuntimeErrorException;
+
 public class Test_Mutex 
 {
 
@@ -36,5 +38,22 @@ public class Test_Mutex
 				public String getName() {return name;}
 		
 			} */
+	
+	// Question 07 : Exercice MUTEX :
+	
+	public static void main(String[] args) 
+	{
+	try {
+		System.out.println("A");
+		testmethod();
+		System.out.println("B");
+		} catch (Exception e) 
+		{System.out.println("C");}
+		finally {System.out.println("D");}
+	}
+	private static void testmethod() 
+	{
+		throw new RuntimeException("Je suis une exception");
+	}
 
 }
